@@ -2,90 +2,67 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>TURKA | Kullanıcı Portalı</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turka / Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <table class="main-layout" cellpadding="0" cellspacing="0">
-        <tr>
-            <td colspan="2" class="header-zone">
-                <table width="100%">
-                    <tr>
-                        <td><font face="Verdana" size="2" color="#666">TURKA_v2.06_PRO</font></td>
-                        <td align="right"><font face="Tahoma" size="2" color="#888">Hoşgeldiniz, Misafir</font></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
+    <nav class="gh-nav">
+        <div class="nav-container">
+            <div class="brand">
+                <svg height="32" viewBox="0 0 16 16" width="32" fill="white"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                <span>Turka<b>Hub</b></span>
+            </div>
+            <div class="nav-user" id="user-display">Giriş Yapılmadı</div>
+        </div>
+    </nav>
 
-        <tr valign="top">
-            <td width="200" class="sidebar">
-                <div class="sidebar-inner">
-                    <h2 class="logo">TURKA</h2>
-                    <hr color="#222">
-                    <div class="menu-label">NAVİGASYON</div>
-                    <a href="#" class="nav-link">ANA SAYFA</a>
-                    <a href="#" class="nav-link">BLOGLARI OKU</a>
-                    <a href="#" class="nav-link active">HESAP AÇ</a>
-                    <a href="#" class="nav-link">YAZI PAYLAŞ</a>
-                    <div class="status-indicator">
-                        SİSTEM: <span class="online">ONLINE</span>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="profile-card">
+                <div class="avatar"></div>
+                <h2>Turka Project</h2>
+                <p>Full-stack Developer & Designer</p>
+                <button class="edit-btn" onclick="showSection('auth')">Profili Düzenle</button>
+            </div>
+            <nav class="side-menu">
+                <button onclick="showSection('feed')">📖 Akış</button>
+                <button onclick="showSection('write')">✍️ Yazı Paylaş</button>
+                <button onclick="showSection('repo')">📁 Projeler</button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section id="feed-section" class="content-section">
+                <div class="section-header">
+                    <h3>Son Yazılar</h3>
+                </div>
+                <div id="posts-container">
                     </div>
+            </section>
+
+            <section id="write-section" class="content-section" style="display:none;">
+                <div class="section-header"><h3>Yeni Blog Yazısı</h3></div>
+                <div class="gh-card">
+                    <input type="text" id="post-title" placeholder="Yazı Başlığı..." class="gh-input">
+                    <textarea id="post-content" placeholder="İçeriği buraya yazın (Markdown desteklenir)..." class="gh-input" rows="10"></textarea>
+                    <button class="gh-btn" onclick="publishPost()">Yayınla</button>
                 </div>
-            </td>
+            </section>
 
-            <td class="main-content">
-                <div class="content-wrapper">
-                    
-                    <table class="content-table" width="100%" border="1" bordercolor="#333" cellpadding="15">
-                        <tr>
-                            <td bgcolor="#1a1a1a"><b><font color="#8a6d3b">YENİ HESAP OLUŞTUR</font></b></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <form>
-                                    Kullanıcı Adı:<br>
-                                    <input type="text" class="old-input"><br><br>
-                                    E-Posta:<br>
-                                    <input type="password" class="old-input"><br><br>
-                                    Şifre:<br>
-                                    <input type="password" class="old-input"><br><br>
-                                    <button type="button" class="old-btn">KAYIT OL</button>
-                                </form>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <br><br>
-
-                    <table class="content-table" width="100%" border="1" bordercolor="#333" cellpadding="15">
-                        <tr>
-                            <td bgcolor="#1a1a1a"><b><font color="#8a6d3b">YENİ BLOG YAZISI GÖNDER</font></b></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <form>
-                                    Başlık:<br>
-                                    <input type="text" class="old-input" style="width: 100%;"><br><br>
-                                    Mesajınız:<br>
-                                    <textarea class="old-input" rows="8" style="width: 100%;"></textarea><br><br>
-                                    <button type="button" class="old-btn">YAZIYI PAYLAŞ</button>
-                                </form>
-                            </td>
-                        </tr>
-                    </table>
-
+            <section id="auth-section" class="content-section" style="display:none;">
+                <div class="section-header"><h3>Hesap Ayarları</h3></div>
+                <div class="gh-card">
+                    <p>Takma Adın:</p>
+                    <input type="text" id="username-input" class="gh-input" placeholder="@kullaniciadi">
+                    <button class="gh-btn" onclick="saveUser()">Kaydet</button>
                 </div>
-            </td>
-        </tr>
+            </section>
+        </main>
+    </div>
 
-        <tr>
-            <td colspan="2" class="footer">
-                <marquee scrollamount="3"><font size="2" color="#444">BU BÖLÜM GELİŞTİRİLMEKTEDİR... VERİTABANI BAĞLANTISI TEST EDİLİYOR...</font></marquee>
-            </td>
-        </tr>
-    </table>
-
+    <script src="script.js"></script>
 </body>
 </html>
