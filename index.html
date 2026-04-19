@@ -3,23 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turka | Retro Edition</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Turka | Retro</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        /* CSS'i direkt buraya ekledim ki bağlantı sorunu olmasın */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #000;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            font-family: 'VT323', monospace;
+        }
+        .fog {
+            position: absolute;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, rgba(0,0,0,0) 70%);
+            filter: blur(80px);
+            animation: move 12s infinite alternate ease-in-out;
+            z-index: 1;
+        }
+        @keyframes move { from { top: 10%; left: 10%; } to { top: 50%; left: 60%; } }
+        .retro-box {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 50px;
+            border: 3px double #FFD700;
+            background: rgba(0,0,0,0.9);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+        h1 {
+            font-size: 7rem;
+            color: #FFD700;
+            letter-spacing: 12px;
+            text-shadow: 0 0 15px #FFD700;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 2rem;
+            color: #00FF41;
+            text-shadow: 0 0 8px #00FF41;
+        }
+        .cursor {
+            display: inline-block;
+            width: 15px; height: 4px;
+            background: #00FF41;
+            animation: blink 0.8s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+    </style>
 </head>
 <body>
-
-    <div class="fog-container">
-        <div class="fog"></div>
-    </div>
-
+    <div class="fog"></div>
     <div class="retro-box">
-        <h1 class="brand">TURKA</h1>
-        <div class="divider"></div>
-        <p class="status">bu web site geliştirilmektedir...</p>
-        <div class="cursor"></div>
+        <h1>TURKA</h1>
+        <p>bu web site geliştirilmektedir <span class="cursor"></span></p>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
