@@ -3,66 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turka / Hub</title>
+    <title>TurkaHub | Geliştirici Portalı</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="gh-nav">
-        <div class="nav-container">
-            <div class="brand">
-                <svg height="32" viewBox="0 0 16 16" width="32" fill="white"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-                <span>Turka<b>Hub</b></span>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Turka<span>Hub</span></div>
+            <div class="nav-links">
+                <a href="#home">Giriş</a>
+                <a href="#about">Hakkımızda</a>
+                <a href="#projects">Projeler</a>
+                <a href="#contact">İletişim</a>
             </div>
-            <div class="nav-user" id="user-display">Giriş Yapılmadı</div>
         </div>
     </nav>
 
-    <div class="layout">
-        <aside class="sidebar">
-            <div class="profile-card">
-                <div class="avatar"></div>
-                <h2>Turka Project</h2>
-                <p>Full-stack Developer & Designer</p>
-                <button class="edit-btn" onclick="showSection('auth')">Profili Düzenle</button>
+    <header id="home" class="hero">
+        <div class="container">
+            <div class="badge-top">v2.0.26 Deployment</div>
+            <h1>Geleceği Kodla.</h1>
+            <p>GitHub ekosisteminde modern web teknolojileri ve açık kaynak projeler geliştiriyoruz.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">Projeleri İncele</a>
+                <a href="#about" class="btn-secondary">Hakkımızda</a>
             </div>
-            <nav class="side-menu">
-                <button onclick="showSection('feed')">📖 Akış</button>
-                <button onclick="showSection('write')">✍️ Yazı Paylaş</button>
-                <button onclick="showSection('repo')">📁 Projeler</button>
-            </nav>
-        </aside>
+        </div>
+    </header>
 
-        <main class="content">
-            <section id="feed-section" class="content-section">
-                <div class="section-header">
-                    <h3>Son Yazılar</h3>
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Hakkımızda</h2>
+            <div class="card about-card">
+                <div class="card-content">
+                    <p>TurkaHub, dijital dünyada yenilikçi çözümler üretmek amacıyla kurulmuş bir geliştirici üssüdür. Yazılım geliştirme sürecini sadece kod yazmak olarak değil, bir tasarım sanatı olarak görüyoruz.</p>
+                    <br>
+                    <p>Odak noktamız; GitHub Pages üzerinde yüksek performanslı web siteleri, Python tabanlı otomasyonlar ve kullanıcı odaklı mobil arayüz tasarımlarıdır.</p>
                 </div>
-                <div id="posts-container">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">Öne Çıkan Projeler</h2>
+            <div class="project-grid">
+                
+                <div class="project-card featured">
+                    <div class="card-header">
+                        <svg class="repo-icon" height="24" viewBox="0 0 16 16" width="24"><path fill="#58a6ff" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7a.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8z"></path></svg>
+                        <h3>Turkmedia23</h3>
                     </div>
-            </section>
-
-            <section id="write-section" class="content-section" style="display:none;">
-                <div class="section-header"><h3>Yeni Blog Yazısı</h3></div>
-                <div class="gh-card">
-                    <input type="text" id="post-title" placeholder="Yazı Başlığı..." class="gh-input">
-                    <textarea id="post-content" placeholder="İçeriği buraya yazın (Markdown desteklenir)..." class="gh-input" rows="10"></textarea>
-                    <button class="gh-btn" onclick="publishPost()">Yayınla</button>
+                    <p>Dijital medya yönetimi ve içerik stratejileri için geliştirilmiş ana platformumuz.</p>
+                    <div class="card-footer">
+                        <span class="tag-featured">Core Project</span>
+                        <a href="https://turkmedia23.github.io" target="_blank" class="live-link">Canlı İzle ↗</a>
+                    </div>
                 </div>
-            </section>
 
-            <section id="auth-section" class="content-section" style="display:none;">
-                <div class="section-header"><h3>Hesap Ayarları</h3></div>
-                <div class="gh-card">
-                    <p>Takma Adın:</p>
-                    <input type="text" id="username-input" class="gh-input" placeholder="@kullaniciadi">
-                    <button class="gh-btn" onclick="saveUser()">Kaydet</button>
+                <div class="project-card">
+                    <h3>Fen Kuşu</h3>
+                    <p>Eğitici oyun dünyası altyapısı.</p>
+                    <span class="tag">Python</span>
                 </div>
-            </section>
-        </main>
-    </div>
 
-    <script src="script.js"></script>
+                <div class="project-card">
+                    <h3>Sporistan</h3>
+                    <p>Canlı F1 ve spor veri takipçisi.</p>
+                    <span class="tag">API / JS</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">İletişim</h2>
+            <div class="card contact-wrapper">
+                <h3>Bir sonraki projeniz için hazır mısınız?</h3>
+                <p>Sorularınız veya iş birliği talepleriniz için bize e-posta gönderin.</p>
+                <a href="mailto:iletisim@turka.com" class="email-btn">iletisim@turka.com</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TurkaHub. GitHub üzerinde gururla barındırılmaktadır.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
