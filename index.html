@@ -3,56 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TURKA Kurulum Sihirbazı</title>
+    <title>Windows XP Setup</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="fog-overlay"></div>
-
-    <div class="xp-setup-container">
-        <div class="setup-sidebar">
-            <h1 class="sidebar-logo">TURKA</h1>
-            <ul class="setup-steps">
-                <li><span class="step-icon"></span> Bilgi Toplama</li>
-                <li><span class="step-icon"></span> Veritabanı Ayarı</li>
-                <li><span class="step-icon"></span> Arayüz Tasarımı</li>
-                <li class="active-step"><span class="step-icon"></span> Sistem Kurulumu</li>
-                <li><span class="step-icon"></span> Tamamlama</li>
+    <div class="xp-container">
+        <div class="sidebar">
+            <div class="sidebar-top">
+                <h1>Windows <span>XP</span></h1>
+                <p>Professional Setup</p>
+            </div>
+            
+            <ul class="steps">
+                <li>Collecting information</li>
+                <li>Dynamic Update</li>
+                <li>Preparing installation</li>
+                <li class="active">Installing Windows</li>
+                <li>Finalizing installation</li>
             </ul>
-            <div class="setup-status">
-                Kurulumun tamamlanmasına yaklaşık:<br>
-                <strong>33 dakika</strong> kaldı.
+
+            <div class="sidebar-footer">
+                Setup will complete approximately:<br>
+                <strong>33 minutes</strong>
             </div>
         </div>
 
-        <div class="setup-main">
-            <div class="main-header">
-                <h2>Turka Web Sitesi Kurulumu</h2>
-                <p>Web sitemizin ayarlarını yapıyoruz.</p>
-                <img src="https://i.imgur.com/vHqQJ6p.png" alt="Setup Icon" class="setup-icon-large">
-            </div>
-            
-            <div class="content-box-outer">
-                <fieldset class="content-box-inner">
-                    <legend>Durum Bilgisi</legend>
-                    
-                    <div class="status-content">
-                        <img src="https://i.imgur.com/w9U9U6f.png" alt="Progress Icon" class="progress-icon">
-                        <div class="status-details">
-                            <h3><span class="blink_me">DİKKAT!</span></h3>
-                            <p class="geliştirme-notu">bu web site geliştirilmektedir.</p>
-                            <p>Lütfen daha sonra tekrar deneyiniz.</p>
-                        </div>
-                    </div>
-                </fieldset>
+        <div class="main-content">
+            <div class="header">
+                <h2>Date and Time Settings</h2>
+                <p>Set the correct date and time for your Windows computer.</p>
             </div>
 
-            <div class="setup-buttons">
-                <button class="xp-btn" disabled>&lt; Geri</button>
-                <button class="xp-btn">İleri &gt;</button>
-                <button class="xp-btn active-btn">İptal</button>
+            <div class="body-area">
+                <div class="group-box">
+                    <span class="group-label">Date & Time</span>
+                    <div class="inner-content">
+                        <div class="fake-input">Pazar, 19 Nisan 2026</div>
+                        <div class="fake-input">18:59:00</div>
+                    </div>
+                </div>
+
+                <div class="group-box">
+                    <span class="group-label">Status</span>
+                    <div class="inner-content">
+                        <p class="blink">DİKKAT: bu web site geliştirilmektedir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bar">
+                <div class="btn-group">
+                    <button class="xp-button" disabled>&lt; Back</button>
+                    <button class="xp-button">Next &gt;</button>
+                    <button class="xp-button active">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
