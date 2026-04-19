@@ -1,216 +1,127 @@
-/* Temel Ayarlar */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Tahoma", sans-serif;
 }
 
-body {
-    background-color: #000; /* Simsiyah arka plan */
-    color: #333; /* Pencere içi yazılar koyu gri */
-    font-family: 'Segoe UI', Tahoma, Helvetica, sans-serif;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body, html {
+    height: 100%;
+    width: 100%;
     overflow: hidden;
+    background-color: #0058E6; /* Saf XP Mavisi */
 }
 
-/* Sisli Işık Efekti */
-.fog-overlay {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, rgba(0,0,0,0) 70%);
-    filter: blur(80px);
-    transform: translate(-50%, -50%);
-    top: 50%; left: 50%;
-    z-index: 1;
-}
-
-/* XP Kurulum Penceresi */
-.xp-setup-container {
-    position: relative;
-    z-index: 10;
-    width: 750px;
-    height: 500px;
-    background: #ECE9D8;
-    border: 3px solid #0055E5;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+.xp-container {
     display: flex;
-    box-shadow: 15px 15px 40px rgba(0,0,0,0.7);
+    height: 100vh;
+    width: 100vw;
 }
 
-/* Sol Panel (Mavi) */
-.setup-sidebar {
-    width: 200px;
-    background: linear-gradient(to right, #205BD7 0%, #3F8CF3 100%);
+/* Sol Taraf (Mavi Bölüm) */
+.sidebar {
+    width: 250px;
+    background: linear-gradient(to right, #245edb, #3f8cf3);
     color: white;
-    padding: 30px 15px;
-    border-right: 2px solid #0046b5;
-}
-
-.sidebar-logo {
-    font-size: 2rem;
-    color: #FFD700;
-    text-shadow: 2px 2px #000;
-    margin-bottom: 30px;
-    font-style: italic;
-    font-weight: bold;
-}
-
-.setup-steps {
-    list-style: none;
-    font-size: 0.9rem;
-    margin-bottom: 40px;
-}
-
-.setup-steps li {
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.setup-steps li.active-step {
-    color: #FFD700;
-    font-weight: bold;
-    text-shadow: 1px 1px #000;
-}
-
-.step-icon {
-    width: 15px; height: 15px;
-    border: 1px solid white;
-    border-radius: 50%;
-    margin-right: 10px;
-    display: inline-block;
-    background: white;
-}
-
-.active-step .step-icon {
-    background: #FFD700;
-    border-color: #FFD700;
-}
-
-.setup-status {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.4;
-    border-top: 1px dashed rgba(255, 255, 255, 0.3);
-    padding-top: 20px;
-}
-
-/* Sağ Panel (Gri) */
-.setup-main {
-    flex: 1;
+    padding: 30px 20px;
+    border-right: 2px solid #1a41a5;
     display: flex;
     flex-direction: column;
 }
 
-.main-header {
-    background: #fff;
-    padding: 20px;
-    border-bottom: 1px solid #7F9DB9;
-    position: relative;
-}
+.sidebar-top h1 { font-size: 28px; font-style: italic; }
+.sidebar-top h1 span { color: #ff9d00; }
+.sidebar-top p { font-size: 14px; margin-bottom: 40px; }
 
-.main-header h2 { font-size: 1.2rem; font-weight: bold; color: #000; }
-.main-header p { font-size: 0.9rem; color: #555; margin-top: 5px; }
+.steps { list-style: none; flex-grow: 1; }
+.steps li { padding: 10px 0; font-size: 13px; color: rgba(255,255,255,0.6); }
+.steps li.active { color: #ffd700; font-weight: bold; }
 
-.setup-icon-large {
-    position: absolute;
-    top: 20px; right: 20px;
-    width: 40px;
-}
+.sidebar-footer { font-size: 12px; border-top: 1px dashed white; padding-top: 15px; }
 
-/* İçerik Kutusu */
-.content-box-outer {
+/* Sağ Taraf (Gri Bölüm) */
+.main-content {
     flex: 1;
-    padding: 30px;
+    background-color: #ECE9D8; /* Klasik XP Grisi */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
 
-fieldset.content-box-inner {
-    width: 100%;
-    border: 1px solid #7F9DB9;
+.header {
     background: white;
-    padding: 20px;
-    font-size: 0.9rem;
+    padding: 25px 40px;
+    border-bottom: 1px solid #7f9db9;
 }
 
-legend {
-    padding: 0 10px;
-    color: #0055E5;
+.header h2 { font-size: 18px; margin-bottom: 5px; }
+.header p { font-size: 13px; color: #444; }
+
+.body-area {
+    flex: 1;
+    padding: 40px;
+}
+
+.group-box {
+    border: 1px solid #aca899;
+    padding: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    background: white;
+}
+
+.group-label {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background: white;
+    padding: 0 5px;
+    font-size: 12px;
     font-weight: bold;
 }
 
-.status-content {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+.fake-input {
+    border: 1px solid #7f9db9;
+    padding: 5px;
+    margin-bottom: 10px;
+    background: #fff;
+    font-size: 13px;
 }
 
-.progress-icon {
-    width: 60px;
-}
-
-.status-details h3 { font-size: 1rem; margin-bottom: 10px; }
-.geliştirme-notu { font-weight: bold; color: #FF0000; margin-bottom: 5px; }
-
-.blink_me {
+.blink {
+    color: red;
+    font-weight: bold;
     animation: blinker 1s linear infinite;
-    color: #FF0000;
 }
 
-@keyframes blinker {
-    50% { opacity: 0; }
-}
+@keyframes blinker { 50% { opacity: 0; } }
 
-/* Butonlar */
-.setup-buttons {
-    padding: 20px;
-    border-top: 1px solid #7F9DB9;
-    background: #F0F0E8;
-    text-align: right;
+/* Alt Bar */
+.footer-bar {
+    height: 60px;
+    background: #f0f0e8;
+    border-top: 2px solid #888;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
-    gap: 8px;
+    padding: 0 30px;
 }
 
-.xp-btn {
-    padding: 5px 15px;
+.xp-button {
+    padding: 4px 15px;
     min-width: 80px;
-    font-size: 0.9rem;
-    font-family: 'Segoe UI', sans-serif;
-    color: black;
+    margin-left: 8px;
     background: linear-gradient(to bottom, #fcfcfc, #cccccc);
     border: 1px solid #888;
-    cursor: pointer;
     border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
 }
 
-.xp-btn:hover {
-    background: linear-gradient(to bottom, #cccccc, #fcfcfc);
-}
-
-.xp-btn:disabled {
-    color: #999;
-    border-color: #bbb;
-    background: #e1e1e1;
-    cursor: default;
-}
-
-.active-btn {
+.xp-button.active {
+    border: 2px solid #0055e5;
     font-weight: bold;
-    border: 2px solid #0055E5;
 }
 
-/* Mobil uyum */
-@media (max-width: 800px) {
-    .xp-setup-container { width: 95%; flex-direction: column; height: auto; }
-    .setup-sidebar { width: 100%; border-right: none; border-bottom: 2px solid #0046b5; }
-    .sidebar-logo { text-align: center; }
+.xp-button:disabled {
+    color: #999;
 }
