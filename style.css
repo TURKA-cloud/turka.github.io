@@ -1,42 +1,89 @@
-/* 2000'ler Web 1.0 Stili */
+/* 2000'lerin Koyu Portal Tasarımı */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    margin-top: 50px;
+body, html {
+    height: 100%;
     background-color: #000;
+    color: #999;
+    font-family: "Tahoma", "Verdana", sans-serif;
+    overflow-x: hidden;
 }
 
-/* O zamanın meşhur link tasarımı */
+.main-layout { width: 100%; height: 100vh; border-collapse: collapse; }
+
+/* Header */
+.header-zone {
+    background-color: #0d0d0d;
+    border-bottom: 1px solid #222;
+    padding: 5px 15px;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #0a0a0a;
+    border-right: 1px solid #222;
+    padding: 30px 15px;
+}
+
+.logo { color: #555; font-style: italic; margin-bottom: 20px; }
+
+.menu-label {
+    font-size: 10px;
+    color: #444;
+    margin: 15px 0 5px 0;
+    letter-spacing: 1px;
+}
+
 .nav-link {
     display: block;
-    padding: 5px;
-    color: #FFFFFF;
+    padding: 8px;
+    color: #777;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
+    border-bottom: 1px solid #151515;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: #1a1a1a;
+    color: #8a6d3b;
+}
+
+/* İçerik Alanı */
+.main-content { background-color: #111; padding: 40px; }
+.content-wrapper { max-width: 800px; margin: 0 auto; }
+.content-table { background-color: #0a0a0a; border-collapse: collapse; }
+
+/* Form Elemanları (Eski Usul) */
+.old-input {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 5px;
+    margin-top: 5px;
+    font-family: "Courier New", monospace;
+}
+
+.old-btn {
+    background: linear-gradient(to bottom, #333, #111);
     border: 1px solid #444;
-    margin-bottom: 2px;
-    background-color: #333;
+    color: #888;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: bold;
 }
 
-.nav-link:hover {
-    background-color: #FFD700;
-    color: #000;
+.old-btn:hover {
+    border-color: #8a6d3b;
+    color: #ccc;
 }
 
-/* Yanıp sönen yazı (Blink efekti) */
-.blink {
-    animation: blinker 0.6s step-start infinite;
-}
+/* Durumlar */
+.status-indicator { margin-top: 40px; font-size: 10px; color: #333; }
+.online { color: #224422; font-weight: bold; }
 
-@keyframes blinker {
-    50% { opacity: 0; }
-}
-
-/* Tablo kenarlıklarını sertleştir */
-table {
-    border-collapse: collapse;
-}
-
-td {
-    border: 1px solid #444;
+.footer {
+    background-color: #050505;
+    height: 30px;
+    border-top: 1px solid #222;
 }
