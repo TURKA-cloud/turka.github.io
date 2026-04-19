@@ -1,112 +1,144 @@
-/* Temel Ayarlar */
+/* Genel Sıfırlama */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #000000; /* Saf Siyah */
+    background-color: #000000;
     color: #ffffff;
-    line-height: 1.6;
-    scroll-behavior: smooth;
+    font-family: "MS Sans Serif", "Tahoma", sans-serif;
+    overflow-x: hidden;
 }
 
-/* Navigasyon (Üst Menü) */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 10%;
-    background: #000000;
-    border-bottom: 2px solid #FFD700; /* Altın Sarısı Çizgi */
+/* Sisli Işık Efekti */
+.fog-overlay {
     position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 100, 255, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    filter: blur(100px);
+    z-index: -1;
 }
 
-/* Logo Ayarı */
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #FFD700;
+.main-wrapper {
+    max-width: 900px;
+    margin: 20px auto;
+    border: 3px solid #555;
+    background: #111;
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
-.logo img {
-    height: 50px; /* Logonu buradan büyütebilirsin */
-    display: block;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin-left: 25px;
-}
-
-nav ul li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #FFD700;
-}
-
-/* Giriş Alanı (Hero) */
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Header ve Marquee */
+header {
+    background: #222;
+    padding: 10px;
+    border-bottom: 2px solid #444;
     text-align: center;
-    background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
+.top-bar {
+    font-size: 11px;
+    color: #00FF00; /* Fosforlu yeşil */
     margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
-.highlight {
-    color: #FFD700; /* Altın Sarısı */
-}
-
-.btn {
+.logo-text {
+    font-size: 50px;
+    color: #FFD700;
+    text-shadow: 4px 4px #000, 0 0 10px #FFD700;
+    font-style: italic;
+    border: 1px double #444;
     display: inline-block;
-    margin-top: 25px;
-    padding: 12px 35px;
-    background: #FFD700;
-    color: #000000;
-    text-decoration: none;
+    padding: 0 20px;
+    background: linear-gradient(to bottom, #333, #000);
+}
+
+.marquee-container {
+    background: #000;
+    border: 1px solid #333;
+    margin-top: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 15s linear infinite;
+    color: #FFD700;
     font-weight: bold;
-    border-radius: 50px;
-    transition: 0.4s ease;
 }
 
-.btn:hover {
-    background: #ffffff;
-    transform: translateY(-3px);
+@keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
 }
 
-/* Hakkımızda Bölümü */
-.about {
-    padding: 100px 10%;
+/* Layout (Menü ve İçerik) */
+.web-container {
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+}
+
+.side-menu {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-btn {
+    background: linear-gradient(to bottom, #444, #111);
+    color: white;
+    text-decoration: none;
+    padding: 8px;
     text-align: center;
-    background: #0a0a0a;
+    border: 1px solid #666;
+    font-size: 13px;
+    font-weight: bold;
 }
 
-/* Alt Bilgi */
+.nav-btn:hover {
+    background: #FFD700;
+    color: black;
+}
+
+.content-box {
+    flex: 1;
+    background: #000;
+    border: 1px solid #333;
+    padding: 20px;
+    border-left: 4px solid #FFD700;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+    color: #FF0000;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+.gif-placeholder {
+    margin-top: 20px;
+    border: 1px dashed #555;
+    padding: 20px;
+    color: #555;
+}
+
 footer {
-    text-align: center;
-    padding: 40px;
-    background: #000000;
-    border-top: 1px solid #222;
+    background: #222;
     color: #777;
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+    border-top: 2px solid #444;
 }
