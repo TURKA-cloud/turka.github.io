@@ -1,27 +1,34 @@
+/* Genel Ayarlar */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #000000; /* Logondaki ana siyah */
+    color: #ffffff;
     scroll-behavior: smooth;
 }
 
+/* Menü Çubuğu */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
-    background: #2c3e50;
-    color: white;
+    padding: 10px 8%;
+    background: rgba(0, 0, 0, 0.9);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    border-bottom: 2px solid #FFD700; /* Logondaki sarı çizgi */
+}
+
+.logo img {
+    height: 60px; /* Logonu burada boyutlandırabilirsin */
+    display: block;
 }
 
 nav ul {
@@ -30,53 +37,61 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 nav ul li a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
+nav ul li a:hover {
+    color: #FFD700;
+}
+
+/* Ana Bölüm (Hero) */
 .hero {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') no-repeat center center/cover;
-    color: white;
+    background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
 }
 
 .highlight {
-    color: #3498db;
+    color: #FFD700; /* Yıldızın sarısı */
 }
 
 .btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 10px 30px;
-    background: #3498db;
-    color: white;
+    margin-top: 25px;
+    padding: 12px 35px;
+    background: #FFD700;
+    color: #000000;
     text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.4s;
 }
 
 .btn:hover {
-    background: #2980b9;
+    background: #ffffff;
+    transform: scale(1.05);
 }
 
+/* İçerik Bölümü */
 .about {
     padding: 100px 10%;
     text-align: center;
-    background: white;
+    background: #0a0a0a;
 }
 
 footer {
     text-align: center;
-    padding: 20px;
-    background: #2c3e50;
-    color: white;
+    padding: 30px;
+    border-top: 1px solid #333;
+    color: #888;
 }
