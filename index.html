@@ -1,65 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>+++ TURKA RESMİ WEB SİTESİNE HOŞGELDİNİZ +++</title>
+    <meta charset="UTF-8">
+    <title>TURKA | Kullanıcı Portalı</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body bgcolor="#000000" text="#FFFFFF">
+<body>
 
-    <table width="800" border="1" align="center" cellpadding="10" cellspacing="0" bordercolor="#444444">
+    <table class="main-layout" cellpadding="0" cellspacing="0">
         <tr>
-            <td colspan="2" bgcolor="#000080" align="center">
-                <font face="Verdana" size="6" color="#FFD700"><b>TURKA</b></font><br>
-                <font face="Tahoma" size="2" color="#FFFFFF">Sitemize Hoşgeldiniz - Yıl: 2026</font>
-            </td>
-        </tr>
-        
-        <tr>
-            <td colspan="2" bgcolor="#CCCCCC">
-                <marquee scrollamount="5">
-                    <font face="Arial" size="3" color="#FF0000"><b>DUYURU: BU WEB SİTE GELİŞTİRİLMEKTEDİR... LÜTFEN DAHA SONRA TEKRAR ZİYARET EDİNİZ...</b></font>
-                </marquee>
-            </td>
-        </tr>
-
-        <tr valign="top">
-            <td width="150" bgcolor="#222222">
-                <p align="center"><b><font color="#FFD700">MENÜ</font></b></p>
-                <hr>
-                <a href="#" class="nav-link">ANA SAYFA</a><br>
-                <a href="#" class="nav-link">HAKKIMIZDA</a><br>
-                <a href="#" class="nav-link">PROJELER</a><br>
-                <a href="#" class="nav-link">İLETİŞİM</a><br>
-                <hr>
-                <p align="center">
-                    <img src="https://i.imgur.com/w9U9U6f.png" width="80">
-                </p>
-            </td>
-
-            <td width="650" bgcolor="#000000" style="background-image: url('https://i.imgur.com/G36mCjU.png');">
-                <p align="center"><font face="Times New Roman" size="5" color="#FFD700"><b>YAPIM AŞAMASINDA</b></font></p>
-                <br>
-                <p><font face="Verdana" size="2">
-                    Turka portalına ulaştınız. Şu anda sitemiz teknik bir bakımdan geçmektedir. 
-                    En kısa sürede tüm fonksiyonlarımızla karşınızda olacağız.
-                </font></p>
-                <br>
-                <table width="100%" border="1" cellpadding="5" bordercolor="#FFD700">
+            <td colspan="2" class="header-zone">
+                <table width="100%">
                     <tr>
-                        <td align="center">
-                            <font color="#FF0000" class="blink"><b>SİSTEM DURUMU: %15 TAMAMLANDI</b></font>
-                        </td>
+                        <td><font face="Verdana" size="2" color="#666">TURKA_v2.06_PRO</font></td>
+                        <td align="right"><font face="Tahoma" size="2" color="#888">Hoşgeldiniz, Misafir</font></td>
                     </tr>
                 </table>
             </td>
         </tr>
 
+        <tr valign="top">
+            <td width="200" class="sidebar">
+                <div class="sidebar-inner">
+                    <h2 class="logo">TURKA</h2>
+                    <hr color="#222">
+                    <div class="menu-label">NAVİGASYON</div>
+                    <a href="#" class="nav-link">ANA SAYFA</a>
+                    <a href="#" class="nav-link">BLOGLARI OKU</a>
+                    <a href="#" class="nav-link active">HESAP AÇ</a>
+                    <a href="#" class="nav-link">YAZI PAYLAŞ</a>
+                    <div class="status-indicator">
+                        SİSTEM: <span class="online">ONLINE</span>
+                    </div>
+                </div>
+            </td>
+
+            <td class="main-content">
+                <div class="content-wrapper">
+                    
+                    <table class="content-table" width="100%" border="1" bordercolor="#333" cellpadding="15">
+                        <tr>
+                            <td bgcolor="#1a1a1a"><b><font color="#8a6d3b">YENİ HESAP OLUŞTUR</font></b></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    Kullanıcı Adı:<br>
+                                    <input type="text" class="old-input"><br><br>
+                                    E-Posta:<br>
+                                    <input type="password" class="old-input"><br><br>
+                                    Şifre:<br>
+                                    <input type="password" class="old-input"><br><br>
+                                    <button type="button" class="old-btn">KAYIT OL</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <br><br>
+
+                    <table class="content-table" width="100%" border="1" bordercolor="#333" cellpadding="15">
+                        <tr>
+                            <td bgcolor="#1a1a1a"><b><font color="#8a6d3b">YENİ BLOG YAZISI GÖNDER</font></b></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    Başlık:<br>
+                                    <input type="text" class="old-input" style="width: 100%;"><br><br>
+                                    Mesajınız:<br>
+                                    <textarea class="old-input" rows="8" style="width: 100%;"></textarea><br><br>
+                                    <button type="button" class="old-btn">YAZIYI PAYLAŞ</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </td>
+        </tr>
+
         <tr>
-            <td colspan="2" bgcolor="#333333" align="center">
-                <font face="Arial" size="1" color="#AAAAAA">
-                    Best Viewed in 1024x768 Resolution<br>
-                    Copyright (C) 2026 TURKA Corporation. All Rights Reserved.
-                </font>
+            <td colspan="2" class="footer">
+                <marquee scrollamount="3"><font size="2" color="#444">BU BÖLÜM GELİŞTİRİLMEKTEDİR... VERİTABANI BAĞLANTISI TEST EDİLİYOR...</font></marquee>
             </td>
         </tr>
     </table>
